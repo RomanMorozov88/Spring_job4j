@@ -4,8 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 import police.model.Accident;
 import police.repository.AccidentHibernate;
 
@@ -25,7 +24,7 @@ public class IndexController {
         this.repository = repository;
     }
 
-    @RequestMapping(value = "/police", method = RequestMethod.GET)
+    @GetMapping("/")
     public String getAccidents(ModelMap modelMap) {
         List<Accident> accidentsList = repository.getAccidents();
         modelMap.addAttribute("accidentsList", accidentsList);
