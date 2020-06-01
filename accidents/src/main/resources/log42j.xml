@@ -5,7 +5,7 @@
 </Properties>
 
 <Appenders>
-<RollingFile name="RollingFile" fileName="${log-path}/library/RESULTLOG.log"
+<RollingFile name="RollingFile" fileName="${log-path}/POLICELOG.log"
 filePattern="${log-path}/project-%d{yyyy-MM-dd}-%i.log" >
 <PatternLayout>
 <pattern>%d{dd/MMM/yyyy HH:mm:ss,SSS}- %c{1}: %m%n</pattern>
