@@ -2,6 +2,7 @@ package police.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,8 +27,13 @@ public class IndexController {
 
     @GetMapping("/")
     public String getAccidents(ModelMap modelMap) {
+
         List<Accident> accidentsList = repository.getAccidents();
         modelMap.addAttribute("accidentsList", accidentsList);
+
+        modelMap.addAttribute("user",
+                SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+
         return "index";
     }
 

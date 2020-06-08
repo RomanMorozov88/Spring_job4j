@@ -29,5 +29,10 @@
 
 </div>
 
+<div>
+    <hr/>
+    Login as : ${user.username}
+</div>
+
 </body>
 </html>
